@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planetary Motion | Math-Based Animation</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 28px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #eef4ff;
+      background: #080d1d;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    main { width: min(900px, 100%); text-align: center; }
+    h1 { margin: 0 0 8px; font-size: clamp(1.7rem, 4vw, 2.4rem); }
+    .intro { color: #b9c7df; margin: 0 0 20px; line-height: 1.5; }
+    #canvas-holder {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid #273653;
+      border-radius: 14px;
+      background: #050918;
+    }
+    canvas { display: block; max-width: 100%; height: auto !important; }
+    .instructions {
+      margin: 18px auto;
+      padding: 14px 18px;
+      border: 1px solid #273653;
+      border-radius: 12px;
+      background: #101a30;
+      line-height: 1.7;
+      color: #dce7fb;
+    }
+    .instructions strong { color: #ffffff; }
+    .math {
+      margin: 18px auto;
+      color: #b9c7df;
+      line-height: 1.7;
+      max-width: 760px;
+    }
+    a { color: #8bc5ff; }
+    footer { margin-top: 20px; color: #8191ad; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Planetary Motion</h1>
+    <p class="intro">A math-based animation using angles, sine, cosine, and circular motion.</p>
+    <div id="canvas-holder"></div>
+
+    <section class="instructions">
+      <strong>Controls</strong><br>
+      SPACE = pause / resume &nbsp; | &nbsp; UP ARROW = increase speed<br>
+      DOWN ARROW = decrease speed
+    </section>
+
+    <p class="math">
+      The planet's position is calculated with
+      <strong>x = centerX + radius × cos(angle)</strong> and
+      <strong>y = centerY + radius × sin(angle)</strong>.
+      The angle changes every frame, so the planet continuously moves around the sun.
+    </p>
+
+    <section>
+  <h2>Video Explanation</h2>
+  <p>Watch my explanation of this project:</p>
+
+  <a href="https://drive.google.com/drive/folders/1Sk1AuKwXnFJTgbU5L57uiuS2fNn1tkTj?usp=drive_link" target="_blank">
+    Watch My Explanation Video
+  </a>
+</section>
+    <p><strong>Sources and tools:</strong> The project code was prepared with assistance from ChatGPT.
+      The animation uses the p5.js library loaded from its official CDN. No external images or borrowed
+      animation code are used.</p>
+    <footer>IT3 Final Drill · Math-Based Animation in p5.js</footer>
+  </main>
+
+  <!-- Load p5.js first, then the project sketch. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>
